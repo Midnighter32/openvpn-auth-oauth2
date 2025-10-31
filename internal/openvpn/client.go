@@ -25,7 +25,7 @@ func (c *Client) processClient(ctx context.Context, client connection.Client) er
 		slog.String("session_state", client.SessionState),
 	)
 
-	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 5*time.Minute)
 	defer cancel()
 
 	switch client.Reason {
